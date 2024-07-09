@@ -1,22 +1,22 @@
 import "./style.css";
 import { todoBuilder } from "./infrastructure/todoBuilder";
 import { todoView } from "./dom/todoView";
+import { createSidebar } from "./dom/sidebar";
 
 const body = document.querySelector("body");
-body.classList.add(
-  "container",
-  "mx-auto",
-  "p-4",
-  "flex",
-  "flex-col",
-  "font-mono",
-);
+body.classList.add("flex", "flex-row", "font-mono", "gap-4");
+
+const sidebar = createSidebar();
+body.appendChild(sidebar.getSiderbar());
 
 const todoContainer = document.createElement("div");
 todoContainer.classList.add(
-  "grid",
-  "grid-cols-3",
-  "gap-4",
+  "flex",
+  "flex-col",
+  "gap-10",
+  "p-4",
+  "grow",
+  "mt-4",
 );
 body.appendChild(todoContainer);
 
@@ -29,7 +29,6 @@ const todo = todoBuilder()
   .setPriority(1)
   .setIsDone(false)
   .build();
-
 
 const todoDom = todoView(todo).render();
 

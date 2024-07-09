@@ -96,3 +96,5 @@ function Project() {
     getDoneTodos,
   };
 }
+
+export { Project };

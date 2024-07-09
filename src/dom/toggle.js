@@ -8,17 +8,6 @@ function createToggle() {
   input.classList.add("sr-only", "peer");
   label.appendChild(input);
 
-  const span = document.createElement("span");
-  span.classList.add(
-    "me-3",
-    "text-sm",
-    "font-medium",
-    "text-gray-900",
-    "dark:text-gray-300",
-  );
-  span.innerHTML = "Done";
-  label.appendChild(span);
-
   const div = document.createElement("div");
   div.classList.add(
     "relative",

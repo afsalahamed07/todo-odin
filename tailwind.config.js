@@ -4,11 +4,10 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ["ui-sans-serif", "system-ui"],
-      serif: ["ui-serif", "Georgia"],
-      mono: ["CMU", "ui-monospace", "SFMono-Regular"],
-      display: ["Oswald"],
-      body: ['"Open Sans"'],
+      ubuntu: ["Ubuntu", "sans-serif"],
+      gugi: ["Gugi", "cursive"],
+      fresca: ["Fresca", "cursive"],
+      dosis: ["Dosis", "sans-serif"],
     },
   },
   plugins: [],

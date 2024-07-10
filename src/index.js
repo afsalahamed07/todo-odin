@@ -2,9 +2,18 @@ import "./style.css";
 import { todoBuilder } from "./infrastructure/todoBuilder";
 import { todoView } from "./dom/todoView";
 import { createSidebar } from "./dom/sidebar";
+import { Project } from "./domain/project";
+import { createProjectNav } from "./dom/projectNav";
 
 const body = document.querySelector("body");
-body.classList.add("flex", "flex-row", "font-mono", "gap-4");
+body.classList.add(
+  "flex",
+  "flex-row",
+  "font-dosis",
+  "text-lg",
+  "tracking-wide",
+  "gap-4",
+);
 
 const sidebar = createSidebar();
 body.appendChild(sidebar.getSiderbar());
@@ -72,3 +81,17 @@ const todo4 = todoBuilder()
 
 const todoDom4 = todoView(todo4).render();
 todoContainer.appendChild(todoDom4);
+
+
+
+const project = Project();
+project.setTitle("My first project");
+
+const projectNav = createProjectNav(project);
+sidebar.getProjects().appendChild(projectNav.getNav());
+
+const project2 = Project();
+project2.setTitle("My first project2");
+
+const projectNav2 = createProjectNav(project2);
+sidebar.getProjects().appendChild(projectNav2.getNav());

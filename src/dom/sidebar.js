@@ -2,8 +2,8 @@ function createSidebar() {
   const sidebar = document.createElement("div");
   sidebar.classList.add(
     "bg-gradient-to-r",
-    "from-rose-100",
-    "to-rose-50",
+    "from-red-100",
+    "to-red-50",
     "rounded-md",
     "p-4",
     "flex",
@@ -15,18 +15,26 @@ function createSidebar() {
 
   const title = document.createElement("h1");
   title.classList.add(
+    "font-gugi",
+    "mx-auto",
     "mt-2",
     "text-2xl",
-    "font-black",
-    "tracking-wide",
+    "font-bold",
+    "tracking-wider",
     "text-red-700",
   );
-  title.innerHTML = "Todo App";
+  title.innerHTML = "Odin to Do";
   sidebar.appendChild(title);
+
+  const projects = document.createElement("div");
+  projects.classList.add("flex", "flex-col", "mt-4");
+  sidebar.appendChild(projects);
 
   const getSiderbar = () => sidebar;
 
-  return { getSiderbar };
+  const getProjects = () => projects;
+
+  return { getSiderbar, getProjects };
 }
 
 export { createSidebar };

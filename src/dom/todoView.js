@@ -24,7 +24,7 @@ function todoView(todo) {
 
   const title = document.createElement("h2");
   title.classList.add(
-    "text-lg",
+    "text-xl",
     "font-bold",
     "mb-2",
     "tracking-wide",
@@ -61,12 +61,12 @@ function todoView(todo) {
   accordion.appendChild(dateAndPriority);
 
   const dueDateDom = document.createElement("p");
-  dueDateDom.classList.add("text-gray-600", "mb-2", "text-sm");
+  dueDateDom.classList.add("text-gray-600", "mb-2", "text-base");
   dueDateDom.innerHTML = `Due date: ${format(todo.getDueDate(), "dd/MM/yyyy")}`;
   dateAndPriority.appendChild(dueDateDom);
 
   const priorityDom = document.createElement("p");
-  priorityDom.classList.add("text-gray-600", "mb-2", "text-sm");
+  priorityDom.classList.add("text-gray-600", "mb-2", "text-base");
   priorityDom.innerHTML = `Priority: ${todo.getPriority()}`;
   dateAndPriority.appendChild(priorityDom);
 

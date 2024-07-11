@@ -1,5 +1,11 @@
-function createProjectNav(project) {
+/*
+@param Project project
+@param TodoView target
+@return ProjectNavigation
+*/
+function ProjectNavigation(project, target) {
   let _project = project;
+  let _target = target;
 
   const nav = document.createElement("div");
   nav.classList.add(
@@ -26,7 +32,16 @@ function createProjectNav(project) {
 
   const getNav = () => nav;
 
-  return { getNav };
+  const getProjectTodos = () => _project.getTodos();
+
+  nav.addEventListener("click", () => {
+    _target.clean();
+    _project.getTodos().forEach((todo) => {
+      _target.addTodo(todo);
+    });
+  });
+
+  return { getNav, getProjectTodos };
 }
 
-export { createProjectNav };
+export { ProjectNavigation };

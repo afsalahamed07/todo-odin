@@ -57,7 +57,13 @@ function todoView(todo) {
   accordion.appendChild(descriptionDom);
 
   const dateAndPriority = document.createElement("div");
-  dateAndPriority.classList.add("flex", "flex-row", "justify-between", "mb-2", "overflow-hidden");
+  dateAndPriority.classList.add(
+    "flex",
+    "flex-row",
+    "justify-between",
+    "mb-2",
+    "overflow-hidden",
+  );
   accordion.appendChild(dateAndPriority);
 
   const dueDateDom = document.createElement("p");

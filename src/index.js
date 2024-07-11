@@ -3,7 +3,9 @@ import { todoBuilder } from "./infrastructure/todoBuilder";
 import { todoView } from "./dom/todoView";
 import { createSidebar } from "./dom/sidebar";
 import { Project } from "./domain/project";
-import { createProjectNav } from "./dom/projectNav";
+import { ProjectNavigation } from "./dom/projectNav";
+import { createTodoContainer } from "./dom/todoContainer";
+import { AddButton } from "./dom/addButton";
 
 const body = document.querySelector("body");
 body.classList.add(
@@ -18,16 +20,8 @@ body.classList.add(
 const sidebar = createSidebar();
 body.appendChild(sidebar.getSiderbar());
 
-const todoContainer = document.createElement("div");
-todoContainer.classList.add(
-  "flex",
-  "flex-col",
-  "gap-10",
-  "p-4",
-  "grow",
-  "mt-4",
-);
-body.appendChild(todoContainer);
+const todoContainer = createTodoContainer();
+body.appendChild(todoContainer.getTodoContainer());
 
 const todo = todoBuilder()
   .setTitle("My first todo")
@@ -39,10 +33,6 @@ const todo = todoBuilder()
   .setIsDone(false)
   .build();
 
-const todoDom = todoView(todo).render();
-
-todoContainer.appendChild(todoDom);
-
 const todo2 = todoBuilder()
   .setTitle("My first todo")
   .setDescription(
@@ -52,9 +42,6 @@ const todo2 = todoBuilder()
   .setPriority(1)
   .setIsDone(false)
   .build();
-
-const todoDom2 = todoView(todo2).render();
-todoContainer.appendChild(todoDom2);
 
 const todo3 = todoBuilder()
   .setTitle("My first todo")
@@ -66,9 +53,6 @@ const todo3 = todoBuilder()
   .setIsDone(false)
   .build();
 
-const todoDom3 = todoView(todo3).render();
-todoContainer.appendChild(todoDom3);
-
 const todo4 = todoBuilder()
   .setTitle("My first todo")
   .setDescription(
@@ -79,19 +63,22 @@ const todo4 = todoBuilder()
   .setIsDone(false)
   .build();
 
-const todoDom4 = todoView(todo4).render();
-todoContainer.appendChild(todoDom4);
-
-
-
 const project = Project();
 project.setTitle("My first project");
 
-const projectNav = createProjectNav(project);
-sidebar.getProjects().appendChild(projectNav.getNav());
+project.addTodo(todo);
+project.addTodo(todo2);
+project.addTodo(todo3);
+
+const projectNav = ProjectNavigation(project, todoContainer);
+sidebar.appendProject(projectNav);
 
 const project2 = Project();
+project2.addTodo(todo4);
 project2.setTitle("My first project2");
 
-const projectNav2 = createProjectNav(project2);
-sidebar.getProjects().appendChild(projectNav2.getNav());
+const projectNav2 = ProjectNavigation(project2, todoContainer);
+sidebar.appendProject(projectNav2);
+
+const addBtn = AddButton(sidebar, todoContainer);
+sidebar.getSiderbar().appendChild(addBtn.getButton());

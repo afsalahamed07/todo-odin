@@ -1,3 +1,5 @@
+import { AddButton } from "./addButton.js";
+
 function createSidebar() {
   const sidebar = document.createElement("div");
   sidebar.classList.add(
@@ -11,6 +13,7 @@ function createSidebar() {
     "h-screen",
     "basis-1/6",
     "flex-none",
+    "justify-between"
   );
 
   const title = document.createElement("h1");
@@ -32,9 +35,12 @@ function createSidebar() {
 
   const getSiderbar = () => sidebar;
 
-  const getProjects = () => projects;
+  const appendProject = (project) => {
+    projects.appendChild(project.getNav());
+  };
 
-  return { getSiderbar, getProjects };
+
+  return { getSiderbar, appendProject };
 }
 
 export { createSidebar };

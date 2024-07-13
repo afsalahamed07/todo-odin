@@ -10,26 +10,24 @@ function todoView(todo) {
   container.classList.add(
     "flex",
     "flex-col",
-    "px-4",
+    "p-3",
     "rounded-lg",
     "shadow-md",
     "mx-auto",
     "w-2/3",
     "hover:cursor-pointer",
+    "bg-gradient-to-r",
+    "from-red-100",
+    "to-red-50",
+    "justify-items-center",
   );
 
   const titleDom = document.createElement("div");
-  titleDom.classList.add("flex", "flex-row", "justify-between", "mb-2");
+  titleDom.classList.add("flex", "flex-row", "justify-between");
   container.appendChild(titleDom);
 
   const title = document.createElement("h2");
-  title.classList.add(
-    "text-xl",
-    "font-bold",
-    "mb-2",
-    "tracking-wide",
-    "text-red-600",
-  );
+  title.classList.add("text-xl", "font-bold", "tracking-wide", "text-red-600");
   title.innerHTML = todo.getTitle();
   titleDom.appendChild(title);
 
@@ -61,18 +59,17 @@ function todoView(todo) {
     "flex",
     "flex-row",
     "justify-between",
-    "mb-2",
     "overflow-hidden",
   );
   accordion.appendChild(dateAndPriority);
 
   const dueDateDom = document.createElement("p");
-  dueDateDom.classList.add("text-gray-600", "mb-2", "text-base");
+  dueDateDom.classList.add("text-gray-600", "text-base");
   dueDateDom.innerHTML = `Due date: ${format(todo.getDueDate(), "dd/MM/yyyy")}`;
   dateAndPriority.appendChild(dueDateDom);
 
   const priorityDom = document.createElement("p");
-  priorityDom.classList.add("text-gray-600", "mb-2", "text-base");
+  priorityDom.classList.add("text-gray-600", "text-base");
   priorityDom.innerHTML = `Priority: ${todo.getPriority()}`;
   dateAndPriority.appendChild(priorityDom);
 

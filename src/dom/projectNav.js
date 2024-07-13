@@ -9,7 +9,7 @@ function ProjectNavigation(project, target) {
 
   const nav = document.createElement("div");
   nav.classList.add(
-    "bg-neutral-50",
+    "bg-neutral-300",
     "bg-opacity-[40%]",
     "hover:bg-opacity-[60%]",
     "hover:shadow-sm",
@@ -18,7 +18,8 @@ function ProjectNavigation(project, target) {
     "ease-in-out",
     "duration-500",
     "rounded-md",
-    "p-4",
+    "px-4",
+    "py-2",
     "flex-col",
     "flex-none",
     "mx-auto",

@@ -94,7 +94,7 @@ function ProjectDialog(sideBar, todoContainer) {
     e.preventDefault();
     let project = projectBuilder()
       .setTitle(nameInput.value)
-      .setDescription(descriptionInput.value)
+      .setDescription(descriptionInput.value || "No description")
       .build();
     let projectNav = ProjectNavigation(project, todoContainer);
     sideBar.appendProject(projectNav);

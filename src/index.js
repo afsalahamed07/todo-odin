@@ -6,22 +6,38 @@ import { Project } from "./domain/project";
 import { ProjectNavigation } from "./dom/projectNav";
 import { createTodoContainer } from "./dom/todoContainer";
 import { AddButton } from "./dom/addButton";
+import { topNavigation } from "./dom/topNav.js";
+import { createNavAddButton } from "./dom/navAddButton.js";
 
 const body = document.querySelector("body");
 body.classList.add(
+  "py-2",
   "flex",
   "flex-row",
   "font-dosis",
   "text-lg",
   "tracking-wide",
-  "gap-4",
+  "h-screen"
 );
 
 const sidebar = createSidebar();
 body.appendChild(sidebar.getSiderbar());
 
+const rightContainer = document.createElement("div");
+rightContainer.classList.add("flex", "flex-col", "grow");
+body.appendChild(rightContainer);
+
+const topNav = topNavigation();
+rightContainer.appendChild(topNav.getTopNav());
+
+const navAddButton = createNavAddButton();
+topNav.addBtn(navAddButton.getNavAddButton());
+
+
+
+
 const todoContainer = createTodoContainer();
-body.appendChild(todoContainer.getTodoContainer());
+rightContainer.appendChild(todoContainer.getTodoContainer());
 
 const todo = todoBuilder()
   .setTitle("My first todo")

@@ -5,7 +5,7 @@ function createTodoContainer() {
   todoContainer.classList.add(
     "flex",
     "flex-col",
-    "gap-10",
+    "gap-5",
     "p-4",
     "grow",
     "mt-4",

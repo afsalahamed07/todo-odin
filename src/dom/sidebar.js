@@ -3,14 +3,12 @@ import { AddButton } from "./addButton.js";
 function createSidebar() {
   const sidebar = document.createElement("div");
   sidebar.classList.add(
-    "bg-gradient-to-r",
-    "from-red-100",
-    "to-red-50",
+    "border-r-2",
     "rounded-md",
     "p-4",
     "flex",
     "flex-col",
-    "h-screen",
+    "h-full",
     "basis-1/6",
     "flex-none",
     "justify-between"

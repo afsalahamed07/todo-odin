@@ -1,34 +1,16 @@
-import { AddButton } from "./addButton.js";
+import { AddButton } from "../addButton.js";
 
 function createSidebar() {
   const sidebar = document.createElement("div");
-  sidebar.classList.add(
-    "border-r-2",
-    "rounded-md",
-    "p-4",
-    "flex",
-    "flex-col",
-    "h-full",
-    "basis-1/6",
-    "flex-none",
-    "justify-between"
-  );
+  sidebar.classList.add("sidebar");
 
   const title = document.createElement("h1");
-  title.classList.add(
-    "font-gugi",
-    "mx-auto",
-    "mt-2",
-    "text-2xl",
-    "font-bold",
-    "tracking-wider",
-    "text-red-700",
-  );
+  title.classList.add("page-title");
   title.innerHTML = "Odin to Do";
   sidebar.appendChild(title);
 
   const projects = document.createElement("div");
-  projects.classList.add("flex", "flex-col", "mt-4");
+  projects.classList.add("projects");
   sidebar.appendChild(projects);
 
   const getSiderbar = () => sidebar;
@@ -36,7 +18,6 @@ function createSidebar() {
   const appendProject = (project) => {
     projects.appendChild(project.getNav());
   };
-
 
   return { getSiderbar, appendProject };
 }

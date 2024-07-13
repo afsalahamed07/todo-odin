@@ -32,3 +32,29 @@
         font-style: normal;
     }
 }
+
+.button {
+    @apply flex bg-red-500 text-white rounded-md p-2 hover:bg-red-800;
+}
+
+.sidebar {
+    @apply border-r-2 rounded-md p-4 flex flex-col h-full basis-1/6 flex-none justify-between;
+
+    .page-title {
+        @apply font-gugi mx-auto text-2xl font-bold tracking-wider text-red-700;
+    }
+}
+
+.projects {
+    @apply flex flex-col;
+
+    .project {
+        @apply bg-neutral-300 bg-opacity-[40%] hover:bg-opacity-[60%] hover:shadow-sm
+            hover:cursor-pointer transition-all ease-in-out duration-500 rounded-md px-4
+            py-2 flex-col flex-none mx-auto mt-2 w-full;
+
+        .project-title {
+            @apply text-base font-bold text-neutral-900 mx-auto;
+        }
+    }
+}

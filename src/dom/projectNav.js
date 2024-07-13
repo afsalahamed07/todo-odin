@@ -8,26 +8,10 @@ function ProjectNavigation(project, target) {
   let _target = target;
 
   const nav = document.createElement("div");
-  nav.classList.add(
-    "bg-neutral-300",
-    "bg-opacity-[40%]",
-    "hover:bg-opacity-[60%]",
-    "hover:shadow-sm",
-    "hover:cursor-pointer",
-    "transtion-all",
-    "ease-in-out",
-    "duration-500",
-    "rounded-md",
-    "px-4",
-    "py-2",
-    "flex-col",
-    "flex-none",
-    "mx-auto",
-    "mt-2",
-  );
+  nav.classList.add("project");
 
   const title = document.createElement("h1");
-  title.classList.add("text-xl", "font-bold", "tracking-wider");
+  title.classList.add("project-title");
   title.innerHTML = _project.getTitle();
   nav.appendChild(title);
 

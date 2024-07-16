@@ -1,5 +1,5 @@
 import { projectBuilder } from "../infrastructure/projectBuilder.js";
-import { ProjectNavigation } from "./projectNav.js";
+import { ProjectNavigation } from "./layout/projectNav.js";
 
 /*
  * @param Sidebar sideBar

@@ -1,5 +1,3 @@
-import { AddButton } from "../addButton.js";
-
 function createSidebar() {
   const sidebar = document.createElement("div");
   sidebar.classList.add("sidebar");

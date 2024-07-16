@@ -34,7 +34,9 @@
 }
 
 .button {
-    @apply flex bg-red-500 text-white rounded-md p-2 hover:bg-red-800;
+    @apply flex gap-4 justify-center bg-neutral-200 hover:shadow-md hover:bg-neutral-400
+        hover:cursor-pointer rounded-md px-4 transition-all ease-in-out
+        py-2 font-bold;
 }
 
 .sidebar {
@@ -49,9 +51,7 @@
     @apply flex flex-col;
 
     .project {
-        @apply bg-neutral-300 bg-opacity-[40%] hover:bg-opacity-[60%] hover:shadow-sm
-            hover:cursor-pointer transition-all ease-in-out duration-500 rounded-md px-4
-            py-2 flex-col flex-none mx-auto mt-2 w-full;
+        @apply mt-2;
 
         .project-title {
             @apply text-base font-bold text-neutral-900 mx-auto;

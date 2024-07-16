@@ -3,9 +3,9 @@ import { todoBuilder } from "./infrastructure/todoBuilder";
 import { todoView } from "./dom/todoView";
 import { createSidebar } from "./dom/layout/sidebar";
 import { Project } from "./domain/project";
-import { ProjectNavigation } from "./dom/projectNav";
+import { ProjectNavigation } from "./dom/layout/projectNav";
 import { createTodoContainer } from "./dom/todoContainer";
-import { AddButton } from "./dom/addButton";
+import { AddButton } from "./dom/layout/addButton";
 import { topNavigation } from "./dom/topNav.js";
 import { createNavAddButton } from "./dom/navAddButton.js";
 

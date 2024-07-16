@@ -10,8 +10,9 @@ function createButton(icon, text, onClick) {
   button.innerText = text;
   buttonDiv.appendChild(button);
 
-  button.addEventListener("click", onClick);
-
+  buttonDiv.addEventListener("click", onClick);
 
   return buttonDiv;
 }
+
+export { createButton };

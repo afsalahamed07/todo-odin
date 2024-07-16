@@ -1,7 +1,7 @@
 import { ProjectDialog } from "../projectDialog.js";
-import { createButton } from "../components/button.js";
+import { createButton } from "./button.js";
 
-function ProjectAddButton(sidebar, todoContainer) {
+function createProjectAddButton(sidebar, todoContainer) {
   const onClick = () => {
     const dialog = ProjectDialog(sidebar, todoContainer);
     document.body.appendChild(dialog.getDialog());
@@ -14,4 +14,4 @@ function ProjectAddButton(sidebar, todoContainer) {
   return { getButton };
 }
 
-export { ProjectAddButton as AddButton }
+export { createProjectAddButton }

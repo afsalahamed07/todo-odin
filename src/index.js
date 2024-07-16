@@ -4,7 +4,7 @@ import { createSidebar } from "./dom/layout/sidebar";
 import { Project } from "./domain/project";
 import { ProjectNavigation } from "./dom/layout/projectNav";
 import { createTodoContainer } from "./dom/todoContainer";
-import { AddButton } from "./dom/layout/addButton";
+import { createProjectAddButton } from "./dom/components/addButton";
 import { topNavigation } from "./dom/topNav.js";
 import { createNavAddButton } from "./dom/navAddButton.js";
 
@@ -94,5 +94,5 @@ project2.setTitle("My first project2");
 const projectNav2 = ProjectNavigation(project2, todoContainer);
 sidebar.appendProject(projectNav2);
 
-const addBtn = AddButton(sidebar, todoContainer);
+const addBtn = createProjectAddButton(sidebar, todoContainer);
 sidebar.getSiderbar().appendChild(addBtn.getButton());

@@ -10,11 +10,10 @@ function todoView(todo) {
   container.classList.add("todo");
 
   const accordion = document.createElement("div");
-  accordion.classList.add("flex", "flex-row", "justify-between", "accordion");
+  accordion.classList.add("accordion");
   container.appendChild(accordion);
 
   const title = document.createElement("h2");
-  title.classList.add("text-lg", "font-semibold", "tracking-wide");
   title.innerHTML = todo.getTitle();
   accordion.appendChild(title);
 
@@ -30,7 +29,7 @@ function todoView(todo) {
   container.appendChild(panel);
 
   const descriptionDom = document.createElement("p");
-  descriptionDom.classList.add("mb-2", "text-pretty", "grow");
+  descriptionDom.classList.add("my-4", "text-pretty", "grow");
   descriptionDom.innerHTML = todo.getDescription();
   panel.appendChild(descriptionDom);
 
@@ -39,12 +38,10 @@ function todoView(todo) {
   panel.appendChild(dateAndPriority);
 
   const dueDateDom = document.createElement("p");
-  dueDateDom.classList.add("text-gray-600", "text-base");
   dueDateDom.innerHTML = `Due date: ${format(todo.getDueDate(), "dd/MM/yyyy")}`;
   dateAndPriority.appendChild(dueDateDom);
 
   const priorityDom = document.createElement("p");
-  priorityDom.classList.add("text-gray-600", "text-base");
   priorityDom.innerHTML = `Priority: ${todo.getPriority()}`;
   dateAndPriority.appendChild(priorityDom);
 

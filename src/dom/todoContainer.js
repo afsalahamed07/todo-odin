@@ -1,4 +1,4 @@
-import { todoView } from "./todoView.js";
+import { todoView } from "./components/todoView.js";
 
 function createTodoContainer() {
   const todoContainer = document.createElement("div");

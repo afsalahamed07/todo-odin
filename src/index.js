@@ -1,6 +1,5 @@
 import "./style.css";
 import { todoBuilder } from "./infrastructure/todoBuilder";
-import { todoView } from "./dom/todoView";
 import { createSidebar } from "./dom/layout/sidebar";
 import { Project } from "./domain/project";
 import { ProjectNavigation } from "./dom/layout/projectNav";

@@ -1,4 +1,4 @@
-import { createToggle } from "./toggle.js";
+import { createToggle } from "../toggle.js";
 import { format } from "date-fns";
 
 /*
@@ -7,61 +7,36 @@ import { format } from "date-fns";
  */
 function todoView(todo) {
   const container = document.createElement("div");
-  container.classList.add(
-    "flex",
-    "flex-col",
-    "p-3",
-    "rounded-lg",
-    "shadow-md",
-    "mx-auto",
-    "w-2/3",
-    "hover:cursor-pointer",
-    "bg-gradient-to-r",
-    "from-red-100",
-    "to-red-50",
-    "justify-items-center",
-  );
+  container.classList.add("todo");
 
-  const titleDom = document.createElement("div");
-  titleDom.classList.add("flex", "flex-row", "justify-between");
-  container.appendChild(titleDom);
+  const accordion = document.createElement("div");
+  accordion.classList.add("flex", "flex-row", "justify-between", "accordion");
+  container.appendChild(accordion);
 
   const title = document.createElement("h2");
-  title.classList.add("text-xl", "font-bold", "tracking-wide", "text-red-600");
+  title.classList.add("text-lg", "font-semibold", "tracking-wide");
   title.innerHTML = todo.getTitle();
-  titleDom.appendChild(title);
+  accordion.appendChild(title);
 
   const toggleDiv = document.createElement("div");
-  toggleDiv.classList.add("flex", "flex-row", "flex-row-reverse", "mb-2");
-  titleDom.appendChild(toggleDiv);
+  toggleDiv.classList.add("flex", "flex-row", "flex-row-reverse");
+  accordion.appendChild(toggleDiv);
 
   const toggle = createToggle();
   toggleDiv.appendChild(toggle.getToggle());
 
-  const accordion = document.createElement("div");
-  accordion.classList.add(
-    "opacity-0",
-    "h-0",
-    "overflow-y-hidden",
-    "transition-all",
-    "duration-500",
-    "ease-in-out",
-  );
-  container.appendChild(accordion);
+  const panel = document.createElement("div");
+  panel.classList.add("panel");
+  container.appendChild(panel);
 
   const descriptionDom = document.createElement("p");
   descriptionDom.classList.add("mb-2", "text-pretty", "grow");
   descriptionDom.innerHTML = todo.getDescription();
-  accordion.appendChild(descriptionDom);
+  panel.appendChild(descriptionDom);
 
   const dateAndPriority = document.createElement("div");
-  dateAndPriority.classList.add(
-    "flex",
-    "flex-row",
-    "justify-between",
-    "overflow-hidden",
-  );
-  accordion.appendChild(dateAndPriority);
+  dateAndPriority.classList.add("flex", "flex-row", "justify-between");
+  panel.appendChild(dateAndPriority);
 
   const dueDateDom = document.createElement("p");
   dueDateDom.classList.add("text-gray-600", "text-base");
@@ -86,11 +61,11 @@ function todoView(todo) {
   });
 
   container.addEventListener("mouseover", () => {
-    accordion.classList.remove("opacity-0", "h-0");
+    panel.style.maxHeight = panel.scrollHeight + "px";
   });
 
   container.addEventListener("mouseleave", () => {
-    accordion.classList.add("opacity-0", "h-0");
+    panel.style.maxHeight = null;
   });
 
   const render = () => {

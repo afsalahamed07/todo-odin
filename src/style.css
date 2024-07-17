@@ -96,10 +96,18 @@
 }
 
 .dialog {
-    @apply p-4 shadow-lg rounded-lg pb-8;
+    @apply p-4 shadow-lg rounded-lg w-5/12;
 
     .dialog-header {
-        @apply flex flex-row justify-between;
+        @apply flex flex-row justify-between gap-4;
+
+        h2 {
+            @apply text-lg font-bold;
+        }
+
+        .btn {
+            @apply hover:cursor-pointer outline-none border-none;
+        }
     }
 
     .dialog-body {

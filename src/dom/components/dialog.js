@@ -1,4 +1,4 @@
-function creatDialog() {
+function createDialog() {
   const dialog = document.createElement("dialog");
   dialog.className = "dialog";
 
@@ -30,8 +30,8 @@ function creatDialog() {
     dialog.showModal();
   };
 
-  const setDialogTitle = (title) => {
-    dialogHeader.innerHTML = title;
+  const setTitle = (title) => {
+    dialogTitle.innerHTML = title;
   };
 
   const addToDialog = (element) => {
@@ -40,5 +40,8 @@ function creatDialog() {
 
   const getDialog = () => dialog;
 
-  return { setDialogTitle, open, close, addToDialog, getDialog };
+  closeBtn.addEventListener("click", close);
+  return { setTitle, open, close, addToDialog, getDialog };
 }
+
+export { createDialog };

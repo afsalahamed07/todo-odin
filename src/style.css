@@ -86,3 +86,7 @@
         after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600;
     }
 }
+
+.top-nav-bar {
+    @apply flex flex-row justify-center flex-none sticky py-4;
+}

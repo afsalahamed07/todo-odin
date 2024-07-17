@@ -1,14 +1,7 @@
 function topNavigation() {
   const topNav = document.createElement("div");
 
-  topNav.classList.add(
-    "flex",
-    "flex-row",
-    "justify-center",
-    "h-16",
-    "flex-none",
-    "sticky",
-  );
+  topNav.classList.add("top-nav-bar");
 
   const addBtn = (btn) => {
     topNav.appendChild(btn);

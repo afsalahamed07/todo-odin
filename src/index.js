@@ -5,8 +5,8 @@ import { Project } from "./domain/project";
 import { ProjectNavigation } from "./dom/layout/projectNav";
 import { createTodoContainer } from "./dom/todoContainer";
 import { createProjectAddButton } from "./dom/components/addButton";
-import { topNavigation } from "./dom/topNav.js";
-import { createNavAddButton } from "./dom/navAddButton.js";
+import { topNavigation } from "./dom/layout/topNav.js";
+import { createNavAddButton } from "./dom/components/navAddButton.js";
 
 const body = document.querySelector("body");
 body.classList.add(

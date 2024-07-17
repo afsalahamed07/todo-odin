@@ -1,5 +1,5 @@
 import "./style.css";
-import { todoBuilder } from "./infrastructure/todoBuilder";
+import { Todo } from "./domain/todo";
 import { createSidebar } from "./dom/layout/sidebar";
 import { Project } from "./domain/project";
 import { ProjectNavigation } from "./dom/layout/projectNav";
@@ -15,7 +15,7 @@ body.classList.add(
   "flex-row",
   "font-dosis",
   "tracking-wide",
-  "h-screen"
+  "h-screen",
 );
 
 const sidebar = createSidebar();
@@ -31,51 +31,44 @@ rightContainer.appendChild(topNav.getTopNav());
 const navAddButton = createNavAddButton();
 topNav.addBtn(navAddButton.getNavAddButton());
 
-
-
-
 const todoContainer = createTodoContainer();
 rightContainer.appendChild(todoContainer.getTodoContainer());
 
-const todo = todoBuilder()
-  .setTitle("My first todo")
-  .setDescription(
-    "This is a description, it can be long or short. It's up to you!, but it's better to be long so you can see how it looks like.",
-  )
-  .setDueDate(new Date())
-  .setPriority(1)
-  .setIsDone(false)
-  .build();
+const todo = Todo();
+todo.setTitle("My first todo");
+todo.setDescription(
+  "This is a description, it can be long or short. It's up to you!, but it's better to be long so you can see how it looks like.",
+);
+todo.setDueDate(new Date());
+todo.setPriority(1);
+todo.setIsDone(false);
 
-const todo2 = todoBuilder()
-  .setTitle("My first todo")
-  .setDescription(
-    "This is a description, it can be long or short. It's up to you!, but it's better to be long so you can see how it looks like.",
-  )
-  .setDueDate(new Date())
-  .setPriority(1)
-  .setIsDone(false)
-  .build();
+const todo2 = Todo();
+todo2.setTitle("My first todo");
+todo2.setDescription(
+  "This is a description, it can be long or short. It's up to you!, but it's better to be long so you can see how it looks like.",
+);
+todo2.setDueDate(new Date());
+todo2.setPriority(1);
+todo2.setIsDone(false);
 
-const todo3 = todoBuilder()
-  .setTitle("My first todo")
-  .setDescription(
+const todo3 = Todo()
+  todo3.setTitle("My first todo")
+  todo3.setDescription(
     "This is a description, it can be long or short. It's up to you!, but it's better to be long so you can see how it looks like.",
   )
-  .setDueDate(new Date())
-  .setPriority(1)
-  .setIsDone(false)
-  .build();
+  todo3.setDueDate(new Date())
+  todo3.setPriority(1)
+  todo3.setIsDone(false)
 
-const todo4 = todoBuilder()
-  .setTitle("My first todo")
-  .setDescription(
+const todo4 = Todo()
+  todo4.setTitle("My first todo")
+  todo4.setDescription(
     "This is a description, it can be long or short. It's up to you!, but it's better to be long so you can see how it looks like.",
   )
-  .setDueDate(new Date())
-  .setPriority(1)
-  .setIsDone(false)
-  .build();
+  todo4.setDueDate(new Date())
+  todo4.setPriority(1)
+  todo4.setIsDone(false)
 
 const project = Project();
 project.setTitle("My first project");

@@ -1,5 +1,5 @@
-import { projectBuilder } from "../infrastructure/projectBuilder.js";
 import { ProjectNavigation } from "./layout/projectNav.js";
+import { Project } from "../domain/project.js";
 
 /*
  * @param Sidebar sideBar
@@ -92,10 +92,9 @@ function ProjectDialog(sideBar, todoContainer) {
 
   submitButton.addEventListener("click", (e) => {
     e.preventDefault();
-    let project = projectBuilder()
-      .setTitle(nameInput.value)
-      .setDescription(descriptionInput.value || "No description")
-      .build();
+    let project = Project();
+    project.setTitle(nameInput.value);
+    project.setDescription(descriptionInput.value || "No description");
     let projectNav = ProjectNavigation(project, todoContainer);
     sideBar.appendProject(projectNav);
 

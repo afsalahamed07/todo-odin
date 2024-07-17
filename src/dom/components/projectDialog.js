@@ -1,48 +1,14 @@
-import { ProjectNavigation } from "./layout/projectNav.js";
-import { Project } from "../domain/project.js";
+import { ProjectNavigation } from "../layout/projectNav.js";
+import { Project } from "../../domain/project.js";
+import { createDialog } from "./dialog.js";
 
 /*
  * @param Sidebar sideBar
  */
 function ProjectDialog(sideBar, todoContainer) {
-  const dialog = document.createElement("dialog");
-  dialog.classList.add("p-4", "shadow-lg", "rounded-lg", "pb-8");
-  const dialogContents = document.createElement("div");
-  dialog.appendChild(dialogContents);
+  const dialog = createDialog();
 
-  dialogContents.classList.add(
-    "w-96",
-    "bg-white",
-    "p-4",
-    "flex",
-    "flex-col",
-    "gap-2",
-  );
-
-  const closeDiv = document.createElement("div");
-  closeDiv.classList.add("flex", "justify-end");
-  dialogContents.appendChild(closeDiv);
-
-  const closeBtn = document.createElement("button");
-  closeBtn.classList.add(
-    "rounded-full",
-    "hover:text-red-600",
-    "hover:cursor-pointer",
-    "outline-none",
-    "font-black",
-  );
-  closeBtn.innerHTML = "X";
-  closeBtn.addEventListener("click", () => {
-    console.log("close");
-    close();
-  });
-  closeDiv.appendChild(closeBtn);
-
-  const title = document.createElement("h2");
-  title.classList.add("text-xl", "font-bold", "text-center", "text-red-600");
-
-  title.innerHTML = "New Project";
-  dialogContents.appendChild(title);
+  dialog.setTitle("Create a new project");
 
   const form = document.createElement("form");
   form.classList.add("flex", "flex-col", "gap-4");
@@ -101,15 +67,9 @@ function ProjectDialog(sideBar, todoContainer) {
     close();
   });
 
-  dialogContents.appendChild(form);
+  dialog.addToDialog(form);
 
-  const getDialog = () => dialog;
-
-  const close = () => dialog.close();
-
-  const show = () => dialog.showModal();
-
-  return { getDialog, show, close };
+  return Object.assign(dialog, {});
 }
 
 export { ProjectDialog };

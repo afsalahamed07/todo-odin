@@ -92,5 +92,17 @@
 }
 
 .todo-container {
-    @apply flex flex-col gap-5 p-4 grow mt-4
+    @apply flex flex-col gap-5 p-4 grow mt-4;
+}
+
+.dialog {
+    @apply p-4 shadow-lg rounded-lg pb-8;
+
+    .dialog-header {
+        @apply flex flex-row justify-between;
+    }
+
+    .dialog-body {
+        @apply mt-4 flex flex-col gap-4;
+    }
 }

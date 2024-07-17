@@ -117,3 +117,7 @@
 .input {
     @apply rounded-md p-2 border-solid border-2;
 }
+
+.input-pair {
+    @apply flex flex-col gap-4;
+}

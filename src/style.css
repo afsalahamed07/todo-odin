@@ -114,3 +114,6 @@
         @apply mt-4 flex flex-col gap-4;
     }
 }
+.input {
+    @apply rounded-md p-2 border-solid border-2;
+}

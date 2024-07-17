@@ -1,4 +1,5 @@
 import { createButton } from "../components/button";
+import { todoView } from "../components/todoView";
 
 /*
 @param Project project
@@ -14,7 +15,8 @@ function ProjectNavigation(project, target) {
   const onClick = () => {
     _target.clean();
     _project.getTodos().forEach((todo) => {
-      _target.addTodo(todo);
+      todo = todoView(todo);
+      _target.addTodo(todo.render());
     });
   };
 

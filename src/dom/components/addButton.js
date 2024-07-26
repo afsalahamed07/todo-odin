@@ -4,7 +4,6 @@ import { createButton } from "./button.js";
 function createProjectAddButton(sidebar, todoContainer) {
   const onClick = () => {
     const dialog = ProjectDialog(sidebar, todoContainer);
-    document.body.appendChild(dialog.getDialog());
     dialog.open();
   };
 

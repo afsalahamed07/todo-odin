@@ -23,10 +23,13 @@ function createDialog() {
   dialog.appendChild(body);
 
   const close = () => {
+    // remove dialog from body
+    dialog.remove();
     dialog.close();
   };
 
   const open = () => {
+    document.body.appendChild(dialog);
     dialog.showModal();
   };
 

@@ -1,4 +1,4 @@
-function createButton(icon, text, onClick) {
+function createButton(icon, text) {
   const buttonDiv = document.createElement("div");
   buttonDiv.classList.add("button");
 
@@ -10,9 +10,27 @@ function createButton(icon, text, onClick) {
   button.innerText = text;
   buttonDiv.appendChild(button);
 
-  buttonDiv.addEventListener("click", onClick);
+  let onClick = () => {
+    console.log("Onclick not implemented yet.");
+  };
 
-  return buttonDiv;
+  buttonDiv.addEventListener("click", () => {
+    onClick();
+  });
+
+  const setOnClick = (newOnClick) => {
+    onClick = newOnClick;
+  };
+
+  const getButton = () => buttonDiv;
+
+  const setClass = (sclass) => {
+    sclass.forEach((c) => {
+      buttonDiv.classList.add(c);
+    });
+  };
+
+  return { getButton, setOnClick, setClass };
 }
 
 export { createButton };

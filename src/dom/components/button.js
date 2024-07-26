@@ -10,16 +10,14 @@ function createButton(icon, text) {
   button.innerText = text;
   buttonDiv.appendChild(button);
 
-  let onClick = () => {
-    console.log("Onclick not implemented yet.");
-  };
-
   buttonDiv.addEventListener("click", () => {
-    onClick();
+    // this is a generic log to point there is on
+    // event listner set
+    console.log("Onclick not implemented yet.");
   });
 
   const setOnClick = (newOnClick) => {
-    onClick = newOnClick;
+    buttonDiv.addEventListener("click", newOnClick);
   };
 
   const getButton = () => buttonDiv;

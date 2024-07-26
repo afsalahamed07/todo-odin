@@ -14,7 +14,7 @@ function createSidebar() {
   const getSiderbar = () => sidebar;
 
   const appendProject = (project) => {
-    projects.appendChild(project.getNav());
+    projects.appendChild(project.getButton());
   };
 
   return { getSiderbar, appendProject };

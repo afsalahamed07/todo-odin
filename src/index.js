@@ -29,7 +29,7 @@ const topNav = topNavigation();
 rightContainer.appendChild(topNav.getTopNav());
 
 const navAddButton = createNavAddButton();
-topNav.addBtn(navAddButton.getNavAddButton());
+topNav.addBtn(navAddButton.getButton());
 
 const todoContainer = createTodoContainer();
 rightContainer.appendChild(todoContainer.getTodoContainer());

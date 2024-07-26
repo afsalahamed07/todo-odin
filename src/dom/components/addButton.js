@@ -8,10 +8,11 @@ function createProjectAddButton(sidebar, todoContainer) {
     dialog.open();
   };
 
-  const addButton = createButton("+", "Add", onClick);
-  const getButton = () => addButton;
+  const addButton = createButton("+", "Add");
 
-  return { getButton };
+  addButton.setOnClick(onClick);
+
+  return addButton;
 }
 
 export { createProjectAddButton };

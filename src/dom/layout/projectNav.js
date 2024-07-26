@@ -20,12 +20,11 @@ function ProjectNavigation(project, target) {
     });
   };
 
-  const nav = createButton("P", _project.getTitle(), onClick);
-  nav.classList.add("project");
+  const nav = createButton("P", _project.getTitle());
+  nav.setOnClick(onClick);
+  nav.setClass(["project"]);
 
-  const getNav = () => nav;
-
-  return { getNav, getProjectTodos };
+  return Object.assign(nav, { getProjectTodos });
 }
 
 export { ProjectNavigation };

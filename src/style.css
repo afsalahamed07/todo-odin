@@ -39,7 +39,7 @@
         py-2 font-bold;
 
     button {
-        @apply mx-auto
+        @apply mx-auto;
     }
 }
 
@@ -124,4 +124,8 @@
 
 .input-pair {
     @apply flex flex-col gap-4;
+}
+
+.submit-btn {
+    @apply bg-red-500 text-white rounded-md p-2 hover:bg-red-800;
 }

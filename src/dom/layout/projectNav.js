@@ -13,8 +13,6 @@ function createProjectButton(project, target, env) {
     env.setCurrentProject(project);
 
     target.clean();
-    // change the sidebar state
-    // trigger re-render
     project.getTodos().forEach((todo) => {
       todo = todoView(todo);
       target.addTodo(todo.render());

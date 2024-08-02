@@ -1,11 +1,11 @@
 import { createButton } from "./button.js";
-import { createTodoForm } from "../todoForm.js";
+import { createTodoForm } from "./todoForm.js";
 
-function createNavAddButton() {
+function todoAddButton(envRef) {
+
   const onClick = () => {
-    const todoForm = createTodoForm();
-
-    todoForm.show();
+    const todoForm = createTodoForm(envRef);
+    todoForm.open();
   };
 
   const navAdd = createButton("+", "Add");
@@ -14,4 +14,4 @@ function createNavAddButton() {
   return Object.assign(navAdd, {});
 }
 
-export { createNavAddButton };
+export { todoAddButton };

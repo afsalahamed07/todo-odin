@@ -1,4 +1,6 @@
 function createSidebar() {
+  let env;
+
   const sidebar = document.createElement("div");
   sidebar.classList.add("sidebar");
 
@@ -7,17 +9,21 @@ function createSidebar() {
   title.innerHTML = "Odin to Do";
   sidebar.appendChild(title);
 
-  const projects = document.createElement("div");
-  projects.classList.add("projects");
-  sidebar.appendChild(projects);
+  const projectsDiv = document.createElement("div");
+  projectsDiv.classList.add("projects");
+  sidebar.appendChild(projectsDiv);
 
   const getSiderbar = () => sidebar;
 
   const appendProject = (project) => {
-    projects.appendChild(project.getButton());
+    projectsDiv.appendChild(project.getButton());
   };
 
-  return { getSiderbar, appendProject };
+  const setEnvironment = (envRef) => {
+    env = envRef;
+  };
+
+  return { getSiderbar, appendProject, setEnvironment };
 }
 
 export { createSidebar };

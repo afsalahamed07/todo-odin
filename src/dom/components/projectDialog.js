@@ -1,4 +1,5 @@
 import { ProjectNavigation } from "../layout/projectNav.js";
+import { createProjectButton } from "../layout/projectNav.js";
 import { Project } from "../../domain/project.js";
 import { createDialog } from "./dialog.js";
 
@@ -62,6 +63,7 @@ function ProjectDialog(sideBar, todoContainer) {
     project.setTitle(nameInput.value);
     project.setDescription(descriptionInput.value || "No description");
     let projectNav = ProjectNavigation(project, todoContainer);
+    let projectNav = createProjectButton(project, todoContainer);
     sideBar.appendProject(projectNav);
 
     close();

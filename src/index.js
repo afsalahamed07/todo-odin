@@ -3,6 +3,7 @@ import { Todo } from "./domain/todo";
 import { createSidebar } from "./dom/layout/sidebar";
 import { Project } from "./domain/project";
 import { ProjectNavigation } from "./dom/layout/projectNav";
+import { createProjectButton } from "./dom/layout/projectNav";
 import { createTodoContainer } from "./dom/layout/todoContainer";
 import { createProjectAddButton } from "./dom/components/addButton";
 import { topNavigation } from "./dom/layout/topNav.js";
@@ -80,6 +81,7 @@ project.addTodo(todo3);
 
 const projectNav = ProjectNavigation(project, todoContainer);
 const projectNav = ProjectNavigation(project, todoContainer, env);
+const projectNav = createProjectButton(project, todoContainer, env);
 sidebar.appendProject(projectNav);
 
 const project2 = Project();
@@ -89,6 +91,7 @@ project2.setTitle("My first project2");
 const projectNav2 = ProjectNavigation(project2, todoContainer);
 env.setCurrentProject(project2);
 const projectNav2 = ProjectNavigation(project2, todoContainer, env);
+const projectNav2 = createProjectButton(project2, todoContainer, env);
 sidebar.appendProject(projectNav2);
 
 const addBtn = createProjectAddButton(sidebar, todoContainer);

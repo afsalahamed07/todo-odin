@@ -28,4 +28,4 @@ function createProjectButton(project, target, env) {
   return Object.assign(nav, { getProjectTodos });
 }
 
-export { createProjectButton as ProjectNavigation };
+export { createProjectButton };

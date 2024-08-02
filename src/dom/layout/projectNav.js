@@ -6,25 +6,26 @@ import { todoView } from "../components/todoView";
 @param TodoView target
 @return ProjectNavigation
 */
-function ProjectNavigation(project, target) {
-  let _project = project;
-  let _target = target;
-
-  const getProjectTodos = () => _project.getTodos();
+function createProjectButton(project, target, env) {
+  const getProjectTodos = () => project.getTodos();
 
   const onClick = () => {
-    _target.clean();
-    _project.getTodos().forEach((todo) => {
+    env.setCurrentProject(project);
+
+    target.clean();
+    // change the sidebar state
+    // trigger re-render
+    project.getTodos().forEach((todo) => {
       todo = todoView(todo);
-      _target.addTodo(todo.render());
+      target.addTodo(todo.render());
     });
   };
 
-  const nav = createButton("P", _project.getTitle());
+  const nav = createButton("P", project.getTitle());
   nav.setOnClick(onClick);
   nav.setClass(["project"]);
 
   return Object.assign(nav, { getProjectTodos });
 }
 
-export { ProjectNavigation };
+export { createProjectButton as ProjectNavigation };

@@ -17,11 +17,7 @@ function createSidebar() {
     projectsDiv.appendChild(project.getButton());
   };
 
-  const setEnvironment = (envRef) => {
-    env = envRef;
-  };
-
-  return { getSiderbar, appendProject, setEnvironment };
+  return { getSiderbar, appendProject };
 }
 
 export { createSidebar };

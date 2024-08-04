@@ -1,6 +1,4 @@
 function createSidebar() {
-  let env;
-
   const sidebar = document.createElement("div");
   sidebar.classList.add("sidebar");
 

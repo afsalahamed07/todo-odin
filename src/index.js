@@ -7,9 +7,11 @@ import { topNavigation } from "./dom/layout/topNav.js";
 import { todoAddButton } from "./dom/components/navAddButton.js";
 import { environment } from "./environment.js";
 import { project, project2 } from "./sampleData.js";
+import { Todo } from "./domain/todo.js";
 
 // this environment should be loaded from localStorage
-const env = environment();
+const todoContainer = createTodoContainer();
+const env = environment(todoContainer);
 
 const body = document.querySelector("body");
 
@@ -26,7 +28,6 @@ rightContainer.appendChild(topNav.getTopNav());
 const navAddButton = todoAddButton(env);
 topNav.addBtn(navAddButton.getButton());
 
-const todoContainer = createTodoContainer();
 rightContainer.appendChild(todoContainer.getTodoContainer());
 
 const projectNav = createProjectButton(project, todoContainer, env);

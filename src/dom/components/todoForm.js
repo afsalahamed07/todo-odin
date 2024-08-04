@@ -2,6 +2,7 @@ import { createInputPair } from "./inputPair.js";
 import { createDialog } from "./dialog.js";
 import { createSubmitButton } from "./submitButton.js";
 import { Todo } from "../../domain/todo.js";
+import { todoView } from "./todoView.js";
 
 function createTodoForm(envRef) {
   let env = envRef;
@@ -35,6 +36,8 @@ function createTodoForm(envRef) {
 
     let currentProject = env.getCurrentProject();
     currentProject.addTodo(todo);
+
+    env.getTodoContainer().addTodo(todoView(todo).render());
 
     dialog.close();
   };

@@ -1,4 +1,4 @@
-function environment() {
+function environment(todoContainer) {
   let projects = [];
   let currentProject = null;
 
@@ -14,7 +14,15 @@ function environment() {
     projects.push(project);
   };
 
-  return { getProjects, getCurrentProject, setCurrentProject, addProject };
+  const getTodoContainer = () => todoContainer;
+
+  return {
+    getProjects,
+    getCurrentProject,
+    setCurrentProject,
+    addProject,
+    getTodoContainer,
+  };
 }
 
 export { environment };

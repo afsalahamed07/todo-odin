@@ -13,6 +13,9 @@ import { Todo } from "./domain/todo.js";
 const todoContainer = createTodoContainer();
 const env = environment(todoContainer);
 
+env.addProject(project);
+env.addProject(project2);
+
 const body = document.querySelector("body");
 
 const sidebar = createSidebar();
@@ -36,5 +39,5 @@ sidebar.appendProject(projectNav);
 const projectNav2 = createProjectButton(project2, todoContainer, env);
 sidebar.appendProject(projectNav2);
 
-const addBtn = createProjectAddButton(sidebar, todoContainer);
+const addBtn = createProjectAddButton(sidebar, todoContainer, env);
 sidebar.getSiderbar().appendChild(addBtn.getButton());

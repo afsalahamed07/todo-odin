@@ -7,7 +7,7 @@ import { createSubmitButton } from "./submitButton.js";
 /*
  * @param Sidebar sideBar
  */
-function ProjectDialog(sideBar, todoContainer) {
+function ProjectDialog(sideBar, todoContainer, env) {
   const dialog = createDialog();
 
   dialog.setTitle("Create a new project");
@@ -35,7 +35,10 @@ function ProjectDialog(sideBar, todoContainer) {
     let project = Project();
     project.setTitle(nameInput.getValue());
     project.setDescription(descriptionInput.getValue() || "No description");
-    let projectNav = createProjectButton(project, todoContainer);
+
+    env.addProject(project);
+
+    let projectNav = createProjectButton(project, todoContainer, env);
     sideBar.appendProject(projectNav);
     dialog.close();
   };
